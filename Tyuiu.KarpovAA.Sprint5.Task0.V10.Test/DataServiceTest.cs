@@ -18,5 +18,5 @@ namespace Tyuiu.KarpovAA.Sprint5.Task0.V10.Test
             bool wait = true;
             Assert.AreEqual(wait, fileExists);
         }
-    }
+    } 
 }

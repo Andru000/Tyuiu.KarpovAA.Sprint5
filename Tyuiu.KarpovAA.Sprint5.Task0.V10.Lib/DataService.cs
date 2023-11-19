@@ -22,6 +22,6 @@ namespace Tyuiu.KarpovAA.Sprint5.Task0.V10.Lib
 
             File.WriteAllText(path, Convert.ToString(result));
             return path;
-        }
+        } 
     }
 }

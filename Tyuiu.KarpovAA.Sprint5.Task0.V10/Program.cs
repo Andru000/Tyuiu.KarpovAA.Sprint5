@@ -33,7 +33,7 @@ namespace Tyuiu.KarpovAA.Sprint5.Task0.V10
             Console.WriteLine("***************************************************************************");
 
             Console.WriteLine("F(x) = 1.6x^3-2.1x^2+7x");
-            Console.WriteLine("x = 2");
+            Console.WriteLine("x = 2"); 
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
