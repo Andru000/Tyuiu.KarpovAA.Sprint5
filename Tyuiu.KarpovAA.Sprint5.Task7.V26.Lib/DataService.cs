@@ -12,7 +12,34 @@ namespace Tyuiu.KarpovAA.Sprint5.Task7.V26.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            throw new NotImplementedException();
+            string pathSaveFile = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask7.txt";
+
+            FileInfo fileInfo = new FileInfo(pathSaveFile);
+            bool fileExixsts = fileInfo.Exists;
+
+            if (fileExixsts)
+            {
+                File.Delete(pathSaveFile);
+            }
+
+            string strLine = "word";
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    for (int i = 0; i < line.Length; i++)
+                    {
+                        if (!(Convert.ToChar(line[i]) >= 'а' && Convert.ToChar(line[i]) <= 'я' || Convert.ToChar(line[i]) >= 'А' && Convert.ToChar(line[i]) <= 'Я'))
+                        {
+                            strLine = strLine + line[i];
+                        }
+                    }
+                    File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
+                    strLine = "word";
+                }
+            }
+            return pathSaveFile;
         }
     }
 }
