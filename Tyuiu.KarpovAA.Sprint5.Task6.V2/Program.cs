@@ -34,7 +34,7 @@ namespace Tyuiu.KarpovAA.Sprint5.Task6.V2
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            string path = @"C:\DataSprint5\InPutDataFileTask6V6.txt";
+            string path = @"C:\DataSprint5\InPutDataFileTask6V2.txt";
             Console.WriteLine("Данные находятся в файле: " + path);
 
             Console.WriteLine("***************************************************************************");

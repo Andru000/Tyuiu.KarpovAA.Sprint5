@@ -26,7 +26,7 @@ namespace Tyuiu.KarpovAA.Sprint5.Task6.V2.Lib
                         }
                     }
                 }
-            }
+            }  
             return count;
         }
     }
