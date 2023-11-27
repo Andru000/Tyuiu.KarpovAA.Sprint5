@@ -36,7 +36,7 @@ namespace Tyuiu.KarpovAA.Sprint5.Task7.V26
             Console.WriteLine("***************************************************************************");
 
             string path = @"C:\DataSprint5\InPutDataFileTask7V26.txt";
-            string pathSaveFile = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask7.txt";
+            string pathSaveFile = @"C:\DataSprint5\OutPutDataFileTask7V26.txt";
 
             Console.WriteLine("Данные находятся в файле: " + path);
 
@@ -47,6 +47,7 @@ namespace Tyuiu.KarpovAA.Sprint5.Task7.V26
             Console.WriteLine("Находится в файле: ");
             pathSaveFile = ds.LoadDataAndSave(path);
             Console.WriteLine(pathSaveFile);
+
             Console.ReadKey();
 
 

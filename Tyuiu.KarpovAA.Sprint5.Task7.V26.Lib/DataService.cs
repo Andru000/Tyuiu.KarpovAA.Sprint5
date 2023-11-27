@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using tyuiu.cources.programming.interfaces.Sprint5;
+using System.Text.RegularExpressions;
 
 namespace Tyuiu.KarpovAA.Sprint5.Task7.V26.Lib
 {
@@ -12,17 +13,14 @@ namespace Tyuiu.KarpovAA.Sprint5.Task7.V26.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            string pathSaveFile = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask7.txt";
-
+            string pathSaveFile = @"C:\DataSprint5\OutPutDataFileTask7V26.txt";
             FileInfo fileInfo = new FileInfo(pathSaveFile);
-            bool fileExixsts = fileInfo.Exists;
-
-            if (fileExixsts)
+            bool fileExists = fileInfo.Exists;
+            if (fileExists)
             {
                 File.Delete(pathSaveFile);
             }
-
-            string strLine = "word";
+            string strLine = "";
             using (StreamReader reader = new StreamReader(path))
             {
                 string line;
@@ -30,13 +28,11 @@ namespace Tyuiu.KarpovAA.Sprint5.Task7.V26.Lib
                 {
                     for (int i = 0; i < line.Length; i++)
                     {
-                        if (!(Convert.ToChar(line[i]) >= 'а' && Convert.ToChar(line[i]) <= 'я' || Convert.ToChar(line[i]) >= 'А' && Convert.ToChar(line[i]) <= 'Я'))
-                        {
-                            strLine = strLine + line[i];
-                        }
+                        strLine = Regex.Replace(line, @"[a-zA-Z]+", "word");
                     }
                     File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
-                    strLine = "word";
+
+                    strLine = "";
                 }
             }
             return pathSaveFile;
